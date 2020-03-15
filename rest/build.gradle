@@ -1,0 +1,10 @@
+plugins {
+    id "org.springframework.boot" version "2.2.5.RELEASE"
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.2.5.RELEASE'
+
+    compile project (':models')
+    compile project (':database')
+}

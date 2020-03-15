@@ -1,0 +1,8 @@
+rootProject.name = 'chat-ivr'
+include 'models'
+include 'database'
+include 'rest'
+include 'dialog'
+include 'asterisk'
+
+

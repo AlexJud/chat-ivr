@@ -1,0 +1,9 @@
+plugins {
+}
+
+dependencies {
+    implementation 'jakarta.persistence:jakarta.persistence-api:2.2.3'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.10.3'
+
+    testImplementation 'com.fasterxml.jackson.core:jackson-databind:2.10.3'
+}

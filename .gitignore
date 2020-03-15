@@ -1,0 +1,8 @@
+# Project exclude paths
+/.gradle/
+/dialog/build/
+/dialog/build/classes/java/main/
+/dialog/build/classes/java/test/
+/models/build/
+/models/build/classes/java/main/
+/models/build/classes/java/test/
