@@ -1,13 +1,14 @@
 package com.net.common.asterisk;
 
 import com.net.common.entities.Destination;
+import com.net.common.entities.Scenario;
 import lombok.Data;
 
 @Data
 public class Session {
-    private Destination destination;
+    private Scenario scenario;
 
-    public Session(Destination destination) {
-        this.destination = destination;
+    public Session(Scenario scenario) {
+        this.scenario = scenario;
     }
 }

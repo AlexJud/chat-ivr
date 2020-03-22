@@ -6,5 +6,5 @@ import org.asteriskjava.fastagi.AgiChannel;
 
 public interface Executable {
 
-    String execute(AgiChannel channel, Context context, Node node);
+    String execute(Context context);
 }

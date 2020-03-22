@@ -7,9 +7,8 @@ import com.net.dialog.service.SwapVars;
 import org.asteriskjava.fastagi.AgiChannel;
 import org.asteriskjava.fastagi.AgiException;
 
-public class SayCommand implements Executable {
+public class SayCommand  {
 
-    @Override
     public String execute(AgiChannel channel, Context context, Node node) {
 
         SayNode sayNode = (SayNode) node;

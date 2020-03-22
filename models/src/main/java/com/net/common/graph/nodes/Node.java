@@ -17,4 +17,12 @@ import java.util.List;
 public class Node {
     private Long id;
     private List<Link> links;
+
+    public String getUserField() {
+        return null;
+    }
+
+    public void setUserField(String value) {
+    }
+
 }

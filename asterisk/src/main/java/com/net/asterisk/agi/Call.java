@@ -1,10 +1,8 @@
 package com.net.asterisk.agi;
 
-import com.net.common.asterisk.Session;
+import com.net.asterisk.processing.CallProcessing;
 import com.net.common.entities.Destination;
 import com.net.data.repositories.DestinationRepository;
-import com.net.data.repositories.ScenarioRepository;
-import com.net.dialog.Dialog;
 import org.asteriskjava.fastagi.AgiChannel;
 import org.asteriskjava.fastagi.AgiException;
 import org.asteriskjava.fastagi.AgiRequest;
@@ -19,24 +17,23 @@ public class Call extends BaseAgiScript {
 
     @Autowired
     private DestinationRepository destinationRepository;
-    @Autowired
-    private ScenarioRepository scenarioRepository;
+
 
     @Autowired
-    private Dialog dialog;
+    private CallProcessing callProcessing;
 
+
+    // Parse who and whom -> answer
     @Override
     public void service(AgiRequest request, AgiChannel channel) throws AgiException {
 
         Optional<Destination> byPoint = destinationRepository.findByPoint(request.getCallerIdNumber());
 
         if (byPoint.isPresent()){
-            Session session = new Session(byPoint.get());
-//       with destinationRepository -> getScenario
 
             answer();
-
-            dialog.run(channel, session);
+            // set destination
+            callProcessing.reply(channel, byPoint.get());
 
             hangup();
         }
